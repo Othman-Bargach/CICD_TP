@@ -1,0 +1,101 @@
+body {
+  background: rgb(69, 29, 199);
+  background: radial-gradient(circle, rgba(69, 29, 199, 1) 15%, rgba(37, 15, 107, 1) 100%);
+  color: white;
+  font-family: 'Roboto', 'Aptos', 'Segoe UI', Tahoma, Verdana, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#initial_button {
+  background-color: #CAFEE0;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #451DC7;
+  border-radius: 100px;
+  display: block;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#container {
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+}
+
+#pokemon_name {
+  color: black;
+  text-transform: capitalize;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+#pokedex_number {
+  color: #49454F;
+  font-size: x-large;
+  margin-top: -30px;
+}
+
+#type1 {
+  background-color: #49454F;
+  text-align: center;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#type2 {
+  background-color: #FFFFFF;
+  text-align: center;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+#pokedex_entry {
+  color: rgb(69, 29, 199);
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+  text-align: center;
+  border: 1px solid rgb(69, 29, 199);
+  border-radius: 100px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* Spacing above the button */
+  cursor: pointer;
+  font-size: small;
+  text-decoration: none;
+  /* Makes it clear that it's clickable */
+}
+
+#randomize {
+  background-color: rgb(69, 29, 199);
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  color: #FFFFFF;
+  border-radius: 100px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* Spacing above the button */
+  cursor: pointer;
+  /* Makes it clear that it's clickable */
+}
