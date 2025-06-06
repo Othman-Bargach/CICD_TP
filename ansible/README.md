@@ -38,6 +38,10 @@ Dans le cadre du TP, cette machine virtuelle est un serveur EC2 AWS sous Ubuntu 
 * Ouvre le port 5000 via UFW
 * Lance Flask en tâche de fond avec nohup
 
+## Execution
+
+ansible-playbook -i inventory.ini playbook.yml
+
 ## ✅ Vérification
 
 Test via navigateur ou curl :
