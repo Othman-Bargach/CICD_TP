@@ -1,5 +1,5 @@
 resource "aws_instance" "app_server" {
-  ami           = "ami-0ba9cfae65a212e98" # 
+  ami           = "ami-0ba9cfae65a212e98" #AMI Ubuntu
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.main.id
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
