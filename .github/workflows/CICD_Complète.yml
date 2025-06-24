@@ -5,7 +5,7 @@ on:
 
 jobs:
   terraform:
-    name: Terraform Apply
+    name: Provisionnement de l'infrastructure avec Terraform
     runs-on: ubuntu-latest
 
     env:
@@ -50,7 +50,9 @@ jobs:
           path: ./terraform-aws-instance/public_ip.txt
 
   ansible:
+    name : Configuration EC2 avec Ansible
     runs-on: ubuntu-latest
+    needs: terraform
 
     steps:
       - name: Checkout code
