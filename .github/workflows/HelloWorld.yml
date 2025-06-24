@@ -1,27 +1,27 @@
 name: Hello world
 
-# Controls when the workflow will run
+# Contrôle quand le workflow sera exécuté
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Déclenche le workflow lors des événements de push ou de pull request, mais uniquement pour la branche "main"
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Permet d'exécuter ce workflow manuellement depuis l'onglet Actions
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# Un workflow est composé d'un ou plusieurs jobs qui peuvent s'exécuter de manière séquentielle ou en parallèle
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Les étapes représentent une séquence de tâches qui seront exécutées dans le cadre du job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Vérifie le code de votre dépôt sous $GITHUB_WORKSPACE, afin que votre job puisse y accéder
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
+      # Exécute une seule commande en utilisant le shell du runner
       - name: Say Hello
         run: echo "Hello World"
 
