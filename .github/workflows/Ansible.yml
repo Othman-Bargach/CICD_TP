@@ -16,16 +16,6 @@ jobs:
       - name: Install Ansible
         run: pip install ansible
 
-      - name: Get Terraform Outputs
-        id: tf-output
-        run: |
-          cd terraform-aws-instance
-          terraform init
-          terraform output -raw public_ip > ../public_ip.txt
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
       - name: Show public IP
         run: cat public_ip.txt
 
