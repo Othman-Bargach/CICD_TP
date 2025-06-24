@@ -1,8 +1,6 @@
 name: Configure EC2 with Ansible
 
 on:
-  push:
-    branches: [ "main" ] # Déclenche les jobs lors d’un push sur main. Le push est notre "trigger" pour le workflow
   workflow_dispatch:
 
 jobs:
