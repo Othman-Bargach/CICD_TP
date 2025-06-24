@@ -49,5 +49,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: public-ip
-          path: public_ip.txt
+          path: ./terraform-aws-instance/public_ip.txt
 
