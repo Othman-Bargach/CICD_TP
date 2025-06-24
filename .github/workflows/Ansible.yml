@@ -16,6 +16,13 @@ jobs:
       - name: Install Ansible
         run: pip install ansible
 
+      # Télécharge l'adresse IP publique de l'instance EC2 créée par Terraform depuis les artifacts du workflow précédent
+      - name: Download public IP artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: public-ip
+
+      # Lit l'adresse IP publique depuis le fichier texte téléchargé
       - name: Show public IP
         run: cat public_ip.txt
 
