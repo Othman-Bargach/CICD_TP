@@ -1,6 +1,6 @@
 ---
 - name: Déployer l'API Flask sur le noeud
-  hosts: webserver
+  hosts: all
   become: yes
   
   vars:

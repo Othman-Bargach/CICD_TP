@@ -79,4 +79,4 @@ jobs:
       - name: Run Ansible Playbook
         run: |
           ANSIBLE_HOST=$(cat public_ip.txt)
-          ansible-playbook -i "$ANSIBLE_HOST," ansible/playbook.yml --private-key $SSH_AUTH_SOCK -u ubuntu
+          ansible-playbook -i "$ANSIBLE_HOST," ansible/playbook.yml
