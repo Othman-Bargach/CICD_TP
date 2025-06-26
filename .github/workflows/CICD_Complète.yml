@@ -71,6 +71,12 @@ jobs:
       - name: Show public IP
         run: cat public_ip.txt
 
+      # Ajoute l'hôte EC2 dans known_hosts pour éviter l'erreur de vérification de clé SSH
+      - name: Add EC2 to known_hosts
+        run: |
+          ANSIBLE_HOST=$(cat public_ip.txt)
+          ssh-keyscan "$ANSIBLE_HOST" >> ~/.ssh/known_hosts
+
       - name: Add SSH key
         uses: webfactory/ssh-agent@v0.9.0
         with:
