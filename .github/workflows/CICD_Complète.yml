@@ -75,6 +75,7 @@ jobs:
       - name: Add EC2 to known_hosts
         run: |
           ANSIBLE_HOST=$(cat public_ip.txt)
+          mkdir -p ~/.ssh
           ssh-keyscan "$ANSIBLE_HOST" >> ~/.ssh/known_hosts
 
       - name: Add SSH key
