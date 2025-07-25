@@ -17,7 +17,7 @@ Cet exercice se fait directement via l’interface GitHub.
 - Il doit afficher "Hello World !" depuis l'onglet Actions.
 
 <details>
-<summary>Code à compléter (remplacez les ???) dans le fichier yml</summary>
+<summary>Code à compléter : remplacez les ??? dans le fichier yml</summary>
 
 ```yaml
 name: Hello World !
