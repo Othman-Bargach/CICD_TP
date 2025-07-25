@@ -59,7 +59,6 @@ jobs:
 
   
 **Question 1** : Que se passe-t-il si vous changez le nom du job ou du workflow ?  
-**Question 2** : Que se passe-t-il si vous poussez sur une autre branche que "Exercice-1-HelloWorld!" ? Le workflow est-il déclenché ?
 
 ## Étape 2 : Déclenchement automatique (push)
 **Objectif** : Modifier le workflow `.github/workflows/HelloWorld.yml`.
@@ -84,3 +83,5 @@ jobs:
         run: echo "Hello World !"
 ```
 </details>
+
+**Question 2** : Que se passe-t-il si vous poussez sur une autre branche que "Exercice-1-HelloWorld!" ? Le workflow est-il déclenché ?
