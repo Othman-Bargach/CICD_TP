@@ -2,7 +2,7 @@ name: Hello World !
 
 on:
   push:
-      branches: [ "Exercice-1-HelloWorld!" ]
+      branches: [ "main" ]
 
 jobs:
   hello:
