@@ -27,4 +27,5 @@ jobs:
 ```
 </details>
 
-- **Question** : Que se passe-t-il si vous changez le nom du job ou du workflow ?
+- **Question 1** : Que se passe-t-il si vous changez le nom du job ou du workflow ?
+- **Question 2** : Le job s’exécute-t-il même avec un nom différent ?
