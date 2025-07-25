@@ -1,12 +1,14 @@
 name: Hello World !
 
-on: ???
+on:
+  push:
+      branches: [ "Exercice-1-HelloWorld!" ]
 
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello
-        run: ???
+        run: echo "Hello World"
 
 
