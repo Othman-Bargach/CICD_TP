@@ -42,8 +42,8 @@ name: Hello world !
 
 # Contrôle quand le workflow sera exécuté
 on:
-  # Permet d'exécuter ce workflow manuellement depuis l'onglet "Actions" du repo GitHub
-    workflow_dispatch:
+  # Workflow_dispatch permet de lancer manuellement un workflow depuis l'onglet "Actions" — idéal pour les tests.
+  workflow_dispatch:
 
 # Un workflow est composé d'un ou plusieurs jobs qui peuvent s'exécuter de manière séquentielle ou en parallèle
 jobs:
@@ -59,7 +59,7 @@ jobs:
 
   
 **Question 1** : Que se passe-t-il si vous changez le nom du job ou du workflow ?  
-**Question 2** : 
+**Question 2** : Que se passe-t-il si vous poussez sur une autre branche que "Exercice-1-HelloWorld!" ? Le workflow est-il déclenché ?
 
 ## Étape 2 : Déclenchement automatique (push)
 **Objectif** : Modifier le workflow `.github/workflows/HelloWorld.yml`.
@@ -72,7 +72,7 @@ jobs:
 name: Hello world !
 
 on:
-  # Déclenche le workflow lors des événements de push, mais uniquement pour la branche "Exercice-1-HelloWorld!"
+  # Le déclencheur push exécute le workflow à chaque commit sur la branche spécifiée.
     push:
       branches: [ "Exercice-1-HelloWorld!" ]
 
