@@ -1,7 +1,16 @@
 # Exercice 1 - Hello World !
 
 ## Prérequis
-- Comprendre la logique et la syntaxe de Github Actions
+Cet exercice se fait directement via l’interface GitHub.
+
+✅ Avoir un compte GitHub actif  
+✅ Avoir forké le dépôt du TP dans son propre compte  
+✅ Être capable de modifier un fichier .yml dans le dossier .github/workflows/  
+✅ Savoir où trouver les logs GitHub Actions (onglet "Actions")  
+
+## Objectif
+Prendre en main la syntaxe d’un workflow GitHub Actions.
+
 ---
 
 ## Déroulé de l'exercice 1
