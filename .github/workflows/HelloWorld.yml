@@ -1,14 +1,12 @@
-name: Hello world
+name: Hello World !
 
-on:
-  ???
+on: ???
 
 jobs:
-  build:
+  hello:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Say Hello
+      - name: Print Hello
         run: ???
 
 
