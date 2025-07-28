@@ -1,26 +1,85 @@
-# CI/CD TP
+# Exercice 2 - Déploiement Infra Terraform
+S'exercer à l'utilisation de GitHub Actions pour déployer une VM AWS sur la base d'un code Terraform. 
 
-## Description
+## Prérequis
+Cet exercice se fait directement via l’interface GitHub.
 
-Le projet CiCD_TP met en place une chaîne CI/CD complète pour déployer une application web composée d’un frontend statique et d’un backend Python (API Flask), le tout automatisé avec Terraform, Ansible et GitHub Actions.
+✅ Les pré-requis de l'exercice 1  
+✅   
 
-## Structure du projet
+---
 
-* frontend/ : Contient la page web statique (HTML/CSS/JS) qui interagit avec l’API Flask.
+## Étape 1 : Terraform Deploy
+**Objectif** : Compléter le workflow `.github/workflows/TerraformDeploy.yml`. 
+- Le workflow doit être déclenché par un bouton depuis l'onglet "Actions du repo GitHub,
+- Il doit afficher "Hello World !" depuis l'onglet Actions.
 
-* terraform-aws-instance/ : Contient les fichiers Terraform pour créer l’infrastructure AWS (principalement une instance EC2, réseau, sécurité, etc.).
+<details>
+<summary>Code à compléter : remplacez les ??? dans le fichier yml</summary>
 
-* ansible/ : Contient le playbook et l’inventaire Ansible pour configurer automatiquement l’instance EC2 (installation de Python, Flask, ouverture des ports, déploiement du code backend).
+```yaml
+name: Hello World !
 
-* .github/workflows/ : Contient les workflows GitHub Actions pour automatiser le déploiement et la destruction de l’infrastructure.
+on: ???
 
-## Fonctionnement global
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello
+        run: ???
+```
+</details>
 
-1. Déploiement de l’infrastructure avec Terraform
-Les fichiers .tf décrivent la création d’une instance EC2 Ubuntu, d’un VPC, d’un subnet, d’un groupe de sécurité ouvrant les ports nécessaires (SSH et 5000).
-Un workflow GitHub Actions (TerraformDeploy.yml) s’exécute à chaque push sur la branche main : il initialise Terraform, planifie et applique les changements sur AWS en utilisant les credentials stockés dans les secrets GitHub.
-2. Configuration de l’instance avec Ansible
-Une fois l’EC2 créée, Ansible se connecte en SSH à la machine, installe les dépendances (Python, pip, virtualenv, git), clone le dépôt backend, installe les requirements et lance l’API Flask.
-Le playbook ouvre aussi le port 5000 pour permettre l’accès à l’API.
-3. Frontend
-La partie frontend est une page statique qui interroge l’API Flask déployée sur l’EC2.
+<details>
+<summary>Correction</summary>
+
+```yaml
+#Le nom qui apparaîtra dans l'onglet "Actions" du repo GitHub
+name: Hello world !
+
+# Contrôle quand le workflow sera exécuté
+on:
+  # Workflow_dispatch permet de lancer manuellement un workflow depuis l'onglet "Actions" — idéal pour les tests.
+  workflow_dispatch:
+
+# Un workflow est composé d'un ou plusieurs jobs qui peuvent s'exécuter de manière séquentielle ou en parallèle
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    # Les étapes représentent une séquence de tâches qui seront exécutées dans le cadre du job
+    steps:
+      # Exécute une seule commande en utilisant le shell du runner
+      - name: Print Hello
+        run: echo "Hello World !"
+```
+</details>
+
+  
+**Question 1** : Que se passe-t-il si vous changez le nom du job ou du workflow ?  
+
+## Étape 2 : Déclenchement automatique (push)
+**Objectif** : Modifier le workflow `.github/workflows/HelloWorld.yml`.
+- Le workflow doit être déclenché à chaque push sur la branche "Exercice-1-HelloWorld!".
+
+<details>
+<summary>Correction</summary>
+
+```yaml
+name: Hello world !
+
+on:
+  # Le déclencheur push exécute le workflow à chaque commit sur la branche spécifiée.
+    push:
+      branches: [ "Exercice-1-HelloWorld!" ]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello
+        run: echo "Hello World !"
+```
+</details>
+
+**Question 2** : Que se passe-t-il si vous poussez sur une autre branche que "Exercice-1-HelloWorld!" ? Le workflow est-il déclenché ?
