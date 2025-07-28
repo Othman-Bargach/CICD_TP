@@ -1,4 +1,4 @@
-name: Destroy Infra
+name: Destroy with Terraform
 
 on:
   workflow_dispatch:
@@ -24,6 +24,5 @@ jobs:
         run: terraform init
         working-directory: ./terraform-aws-instance
 
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve
+      - ???
         working-directory: ./terraform-aws-instance
