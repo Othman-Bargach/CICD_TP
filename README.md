@@ -15,7 +15,7 @@ Cet exercice se fait directement via l’interface GitHub.
 - Il doit lancer les commandes : "Terraform Init", "Terraform Plan" et "Terraform Apply"
 
 <details>
-<summary>Code à compléter : remplacez les ??? dans le fichier yml</summary>
+<summary>Code à compléter : remplacez les ??? dans le fichier yml TerraformDeploy</summary>
 
 ```yaml
 name: Deploy with Terraform
@@ -24,7 +24,7 @@ on:
   workflow_dispatch: 
 
 jobs:
-  Terraform Deploy:
+  Terraform_deploy:
     runs-on: ubuntu-latest
 
     env:
@@ -62,7 +62,7 @@ on:
   workflow_dispatch:     # Permet le déclenchement manuel dans GitHub
 
 jobs:
-  Terraform Apply::
+  Terraform_deploy :
     runs-on: ubuntu-latest
 
     env:
@@ -104,23 +104,75 @@ jobs:
 - Il doit permettre de détruire l'instance avec la commande "Terraform destroy"
 
 <details>
-<summary>Correction</summary>
+<summary>Code à compléter : remplacez les ??? dans le fichier yml TerraformDestroy</summary>
 
 ```yaml
-name: Hello world !
+name: Destroy Infra
 
 on:
-  # Le déclencheur push exécute le workflow à chaque commit sur la branche spécifiée.
-    push:
-      branches: [ "Exercice-1-HelloWorld!" ]
+  workflow_dispatch:
 
 jobs:
-  hello:
+  Terraform_destroy :
     runs-on: ubuntu-latest
+
+    env :
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
     steps:
-      - name: Print Hello
-        run: echo "Hello World !"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ./terraform-aws-instance
+
+      - ???
+        working-directory: ./terraform-aws-instance
 ```
 </details>
 
-**Question 2** : Que se passe-t-il si vous poussez sur une autre branche que "Exercice-1-HelloWorld!" ? Le workflow est-il déclenché ?
+
+<details>
+<summary>Correction</summary>
+
+```yaml
+name: Destroy Infra
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Terraform_destroy :
+    runs-on: ubuntu-latest
+
+    env :
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ./terraform-aws-instance
+
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve
+        working-directory: ./terraform-aws-instance
+```
+</details>
+
+**Question 2** : ?
