@@ -18,16 +18,43 @@ Cet exercice se fait directement via l’interface GitHub.
 <summary>Code à compléter : remplacez les ??? dans le fichier yml</summary>
 
 ```yaml
-name: Hello World !
+name: Deploy with Terraform
 
-on: ???
+on:
+  workflow_dispatch:     # Permet le déclenchement manuel dans GitHub
 
 jobs:
-  hello:
+  terraform:
+    name: Terraform Apply
     runs-on: ubuntu-latest
+
+    env:
+      TF_INPUT: false
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
     steps:
-      - name: Print Hello
-        run: ???
+      # Clone le dépôt sur le runner Ubuntu de Github Actions pour accéder aux fichiers Terraform
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Installe Terraform sur le runner Ubuntu de Github Actions
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ./terraform-aws-instance
+
+      - name: Terraform Plan
+        run: terraform plan
+        working-directory: ./terraform-aws-instance
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        working-directory: ./terraform-aws-instance
 ```
 </details>
 
@@ -72,20 +99,6 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve
         working-directory: ./terraform-aws-instance
-
-      # Enregistre l'adresse IP publique de l'instance EC2 créée par Terraform dans un fichier texte
-      - name: Save public IP output
-        run: |
-          terraform output -raw public_ip > public_ip.txt
-        working-directory: ./terraform-aws-instance
-
-      # Upload l'adresse IP publique dans les artifacts du workflow pour qu'elle puisse être utilisée par d'autres jobs ou workflows
-      - name: Upload public IP artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: public-ip
-          path: ./terraform-aws-instance/public_ip.txt
-
 ```
 </details>
 
