@@ -1,7 +1,7 @@
 name: Deploy with Terraform
 
 on:
-  workflow_dispatch:     # Permet le déclenchement manuel dans GitHub
+  workflow_dispatch: 
 
 jobs:
   Terraform Apply:
@@ -13,11 +13,9 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
-      # Clone le dépôt sur le runner Ubuntu de Github Actions pour accéder aux fichiers Terraform
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Installe Terraform sur le runner Ubuntu de Github Actions
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
