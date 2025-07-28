@@ -107,7 +107,7 @@ jobs:
 <summary>Code à compléter : remplacez les ??? dans le fichier yml TerraformDestroy</summary>
 
 ```yaml
-name: Destroy Infra
+name: Destroy with Terraform
 
 on:
   workflow_dispatch:
@@ -143,7 +143,7 @@ jobs:
 <summary>Correction</summary>
 
 ```yaml
-name: Destroy Infra
+name: Destroy with Terraform
 
 on:
   workflow_dispatch:
