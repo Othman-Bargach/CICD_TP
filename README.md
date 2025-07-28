@@ -21,10 +21,10 @@ Cet exercice se fait directement via l’interface GitHub.
 name: Deploy with Terraform
 
 on:
-  workflow_dispatch:     # Permet le déclenchement manuel dans GitHub
+  workflow_dispatch: 
 
 jobs:
-  Terraform Apply:
+  Terraform Deploy:
     runs-on: ubuntu-latest
 
     env:
@@ -33,11 +33,9 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
-      # Clone le dépôt sur le runner Ubuntu de Github Actions pour accéder aux fichiers Terraform
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Installe Terraform sur le runner Ubuntu de Github Actions
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -64,8 +62,7 @@ on:
   workflow_dispatch:     # Permet le déclenchement manuel dans GitHub
 
 jobs:
-  terraform:
-    name: Terraform Apply
+  Terraform Apply::
     runs-on: ubuntu-latest
 
     env:
@@ -104,7 +101,7 @@ jobs:
 ## Étape 2 : Terraform Destroy
 **Objectif** : Modifier le workflow `.github/workflows/TerraformDestroy.yml`.
 - Le workflow doit être déclenché par un bouton depuis l'onglet "Actions du repo GitHub,
-- Il doit lancer les commandes : "Terraform Init", "Terraform Plan" et "Terraform Apply"
+- Il doit permettre de détruire l'instance avec la commande "Terraform destroy"
 
 <details>
 <summary>Correction</summary>
