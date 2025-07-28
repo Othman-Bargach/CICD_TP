@@ -24,8 +24,7 @@ on:
   workflow_dispatch:     # Permet le déclenchement manuel dans GitHub
 
 jobs:
-  terraform:
-    name: Terraform Apply
+  Terraform Apply:
     runs-on: ubuntu-latest
 
     env:
