@@ -12,7 +12,7 @@ Cet exercice se fait directement via l’interface GitHub.
 ## Étape 1 : Terraform Deploy
 **Objectif** : Compléter le workflow `.github/workflows/TerraformDeploy.yml`. 
 - Le workflow doit être déclenché par un bouton depuis l'onglet "Actions du repo GitHub,
-- Il doit afficher "Hello World !" depuis l'onglet Actions.
+- Il doit lancer les commandes : "Terraform Init", "Terraform Plan" et "Terraform Apply"
 
 <details>
 <summary>Code à compléter : remplacez les ??? dans le fichier yml</summary>
@@ -44,16 +44,13 @@ jobs:
         with:
           terraform_version: 1.6.6
 
-      - name: Terraform Init
-        run: terraform init
+      - ???
         working-directory: ./terraform-aws-instance
 
-      - name: Terraform Plan
-        run: terraform plan
+      - ???
         working-directory: ./terraform-aws-instance
 
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+      - ???
         working-directory: ./terraform-aws-instance
 ```
 </details>
@@ -103,11 +100,12 @@ jobs:
 </details>
 
   
-**Question 1** : Que se passe-t-il si vous changez le nom du job ou du workflow ?  
+**Question 1** : ?
 
-## Étape 2 : Déclenchement automatique (push)
-**Objectif** : Modifier le workflow `.github/workflows/HelloWorld.yml`.
-- Le workflow doit être déclenché à chaque push sur la branche "Exercice-1-HelloWorld!".
+## Étape 2 : Terraform Destroy
+**Objectif** : Modifier le workflow `.github/workflows/TerraformDestroy.yml`.
+- Le workflow doit être déclenché par un bouton depuis l'onglet "Actions du repo GitHub,
+- Il doit lancer les commandes : "Terraform Init", "Terraform Plan" et "Terraform Apply"
 
 <details>
 <summary>Correction</summary>
