@@ -51,7 +51,6 @@
         src: ../app/backend-flask/
         dest: "{{ app_dir }}/"
         mode: '0755'
-      delegate_to: localhost
       # Copie le code source du backend depuis le repo local du runner vers la VM cible
 
     - name: Installer virtualenv
