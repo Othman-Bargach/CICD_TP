@@ -86,4 +86,4 @@ jobs:
       - name: Run Ansible Playbook
         run: |
           ANSIBLE_HOST=$(cat public_ip.txt)
-          ansible-playbook -i "$ANSIBLE_HOST," ansible/playbook.yml -u ubuntu
+          ansible-playbook -i "$ANSIBLE_HOST," CD/ansible/playbook.yml -u ubuntu
