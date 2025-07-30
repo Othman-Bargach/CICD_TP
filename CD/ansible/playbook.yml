@@ -48,7 +48,7 @@
 
     - name: Copier le code backend-flask local sur la machine cible
       copy:
-        src: ../app/backend-flask/
+        src: ../app/CD/backend-flask/
         dest: "{{ app_dir }}/"
         mode: '0755'
       # Copie le code source du backend depuis le repo local du runner vers la VM cible
