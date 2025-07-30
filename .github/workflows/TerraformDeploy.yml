@@ -26,26 +26,26 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./terraform-aws-instance
+        working-directory: ./CD/terraform-aws-instance
 
       - name: Terraform Plan
         run: terraform plan
-        working-directory: ./terraform-aws-instance
+        working-directory: ./CD/terraform-aws-instance
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
-        working-directory: ./terraform-aws-instance
+        working-directory: ./CD/terraform-aws-instance
 
       # Enregistre l'adresse IP publique de l'instance EC2 créée par Terraform dans un fichier texte
       - name: Save public IP output
         run: |
           terraform output -raw public_ip > public_ip.txt
-        working-directory: ./terraform-aws-instance
+        working-directory: ./CD/terraform-aws-instance
 
       # Upload l'adresse IP publique dans les artifacts du workflow pour qu'elle puisse être utilisée par d'autres jobs ou workflows
       - name: Upload public IP artifact
         uses: actions/upload-artifact@v4
         with:
           name: public-ip
-          path: ./terraform-aws-instance/public_ip.txt
+          path: ./CD/terraform-aws-instance/public_ip.txt
 
