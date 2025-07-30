@@ -13,10 +13,9 @@
         name:
           - python3
           - python3-pip
-          - git
+#          - git
         state: present
         update_cache: yes   # Met à jour le cache des paquets avant installation
-
 
 # Ancienne méthode : clonage du dépôt Git (désactivée car le code est déjà dans le repo principal) :
 # ----------------------------------------------------------------------
@@ -51,8 +50,6 @@
       copy:
         src: ../app/backend-flask/
         dest: "{{ app_dir }}/"
-        owner: ubuntu
-        group: ubuntu
         mode: '0755'
       delegate_to: localhost
       # Copie le code source du backend depuis le repo local du runner vers la VM cible
