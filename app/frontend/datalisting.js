@@ -1,4 +1,4 @@
-const IP = '54.77.254.30';
+const IP = '18.202.21.7';
 
 // Script to manage Pokémon card UI and fetch data from the API
 
