@@ -5,7 +5,8 @@ S'exercer à l'utilisation de GitHub Actions pour déployer une VM AWS sur la ba
 Cet exercice se fait directement via l’interface GitHub.
 
 ✅ Les pré-requis de l'exercice 1  
-✅   
+✅    
+**Aide** : Inspirez-vous de la documentation officielle [setup-terraform](https://github.com/hashicorp/setup-terraform).
 
 ---
 
@@ -96,7 +97,7 @@ jobs:
 </details>
 
   
-**Question 1** : ?
+**Question 1** : Pourquoi ne faut-il jamais mettre ses credentials AWS en clair dans le workflow ?
 
 ## Étape 2 : Terraform Destroy
 **Objectif** : Modifier le workflow `.github/workflows/TerraformDestroy.yml`.
