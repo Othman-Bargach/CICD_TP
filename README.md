@@ -19,13 +19,6 @@ Pour suivre le TP, il faut naviguer parmi les différentes branches du repositor
 
 ---
 
-## Prérequis
-
-- Un compte AWS avec les droits nécessaires pour créer des ressources (EC2, VPC, etc.)
-- Une clé SSH créée sur AWS (Key Pair) pour accéder à l’EC2
-- Les credentials AWS (Access Key ID et Secret Access Key) ajoutés dans les **secrets GitHub** du dépôt (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`)
-- Avoir lu la structure du projet et compris le rôle de chaque dossier
-
 ## Structure du projet
 
 - .github/workflows/ : Contient les workflows GitHub Actions pour automatiser le déploiement et la destruction de l’infrastructure.
