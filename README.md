@@ -5,7 +5,9 @@ S'exercer à l'utilisation de GitHub Actions pour déployer une VM AWS sur la ba
 Cet exercice se fait directement via l’interface GitHub.
 
 ✅ Les pré-requis de l'exercice 1  
-✅    
+✅ Un compte AWS avec les droits nécessaires pour créer des ressources (EC2, VPC, etc.)
+✅ Une clé SSH créée sur AWS (Key Pair) pour accéder à l’EC2
+✅ Les credentials AWS (Access Key ID et Secret Access Key) ajoutés dans les **secrets GitHub** du dépôt (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`)  
 **Aide** : Inspirez-vous de la documentation officielle [setup-terraform](https://github.com/hashicorp/setup-terraform).
 
 ---
