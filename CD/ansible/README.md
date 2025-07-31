@@ -9,10 +9,8 @@ Dans le cadre du TP, cette machine virtuelle est un serveur EC2 AWS sous Ubuntu 
 
 ```bash
 .
-├── deploy.yml                # Playbook Ansible
+├── playbook.yml              # Playbook Ansible
 ├── inventory.ini             # Inventaire des hôtes (modifiable dynamiquement)
-├── files/
-│   └── id_ansible_deploy     # Clé privée SSH pour cloner le dépôt GitHub
 ```
 
 ## ⚙️ Prérequis
@@ -27,13 +25,11 @@ Dans le cadre du TP, cette machine virtuelle est un serveur EC2 AWS sous Ubuntu 
 
 * Dépot GitHub :
   * Le dépot Github Flask (ex. : [Othman-Bargach/backend-flask](https://github.com/Othman-Bargach/backend-flask))
-  * Une clé privée SSH Ansible (non chiffrée) dans `files/id_ansible_deploy` ayant **accès au dépôt GitHub**
 
 ## 📄 Description des tâches du Playbook
 
 * Installe Python, pip, git, virtualenv
-* Configure GitHub comme hôte de confiance
-* Clone le dépôt dans /home/ubuntu/flask_app
+* Copie le dossier de l'application dans /home/ubuntu/flask_app
 * Crée un venv et installe les dépendances
 * Ouvre le port 5000 via UFW
 * Lance Flask en tâche de fond avec nohup
