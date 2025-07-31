@@ -3,6 +3,7 @@
 Ce TP a pour objectif de vous faire découvrir et manipuler les **workflows GitHub Actions** pour automatiser le déploiement d’une application web sur AWS, en utilisant Terraform et Ansible.
 
 ---
+
 ## Objectifs pédagogiques
 
 - Comprendre la structure d’un workflow GitHub Actions
@@ -27,15 +28,15 @@ Pour suivre le TP, il faut naviguer parmi les différentes branches du repositor
 
 ## Structure du projet
 
-* .github/workflows/ : Contient les workflows GitHub Actions pour automatiser le déploiement et la destruction de l’infrastructure.
+- .github/workflows/ : Contient les workflows GitHub Actions pour automatiser le déploiement et la destruction de l’infrastructure.
 
-* app/frontend : Contient la page web statique (HTML/CSS/JS) qui interagit avec l’API Flask.
+- app/frontend : Contient la page web statique (HTML/CSS/JS) qui interagit avec l’API Flask.
 
-* app/backend-flask : Contient le code source de l’API Flask qui sera déployée sur l’instance EC2.
+- app/backend-flask : Contient le code source de l’API Flask qui sera déployée sur l’instance EC2.
 
-* CD/terraform-aws-instance/ : Contient les fichiers Terraform pour créer l’infrastructure AWS (principalement une instance EC2, réseau, sécurité, etc.).
+- CD/terraform-aws-instance/ : Contient les fichiers Terraform pour créer l’infrastructure AWS (principalement une instance EC2, réseau, sécurité, etc.).
 
-* CD/ansible/ : Contient le playbook et l’inventaire Ansible pour configurer automatiquement l’instance EC2 (installation de Python, Flask, ouverture des ports, déploiement du code backend).
+- CD/ansible/ : Contient le playbook et l’inventaire Ansible pour configurer automatiquement l’instance EC2 (installation de Python, Flask, ouverture des ports, déploiement du code backend).
 
 ## Fonctionnement global
 
