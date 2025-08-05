@@ -13,7 +13,7 @@ Cet exercice se fait directement via l’interface GitHub.
 
 ## Étape 1 : Déclenchement manuel (workflow_dispatch)
 **Objectif** : Compléter le workflow `.github/workflows/HelloWorld.yml`. 
-- Le workflow doit être déclenché par un bouton depuis l'onglet "Actions du repo GitHub,
+- Le workflow doit être déclenché par un bouton depuis l'onglet "Actions" du repo GitHub,
 - Il doit afficher "Hello World !" depuis l'onglet Actions.
 
 <details>
@@ -85,3 +85,4 @@ jobs:
 </details>
 
 **Question 2** : Que se passe-t-il si vous poussez sur une autre branche que "Exercice-1-HelloWorld!" ? Le workflow est-il déclenché ?
+
