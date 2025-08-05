@@ -43,5 +43,5 @@ Le playbook ouvre aussi le port 5000 pour permettre l’accès à l’API.
 La partie frontend est une page statique qui interroge l’API Flask déployée sur l’EC2.
 
 ---
-Commencez par Fork ce repo et rendez-vous dans la branche de l'exercice 1
+Commencez par Fork ce repo et rendez-vous dans la branche de l'exercice 1  
 **À vous de jouer !**
