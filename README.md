@@ -14,7 +14,7 @@ Cet exercice se fait directement via l’interface GitHub.
 
 ## Étape 1 : Terraform Deploy
 **Objectif** : Compléter le workflow `.github/workflows/TerraformDeploy.yml`. 
-- Le workflow doit être déclenché par un bouton depuis l'onglet "Actions du repo GitHub,
+- Le workflow doit être déclenché par un bouton depuis l'onglet "Actions" du repo GitHub,
 - Il doit lancer les commandes : "Terraform Init", "Terraform Plan" et "Terraform Apply"
 
 <details>
