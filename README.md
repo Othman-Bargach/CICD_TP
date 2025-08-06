@@ -24,7 +24,7 @@ Cet exercice se fait directement via l’interface GitHub.
 name: Deploy with Terraform
 
 on:
-  workflow_dispatch: 
+  ???
 
 jobs:
   Terraform_deploy:
