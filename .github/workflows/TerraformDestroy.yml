@@ -1,7 +1,7 @@
 name: Destroy with Terraform
 
 on:
-  workflow_dispatch:
+  ???
 
 jobs:
   Terraform_destroy :
@@ -26,3 +26,4 @@ jobs:
 
       - ???
         working-directory: ./terraform-aws-instance
+
