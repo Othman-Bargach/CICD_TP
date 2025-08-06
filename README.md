@@ -113,7 +113,7 @@ jobs:
 name: Destroy with Terraform
 
 on:
-  workflow_dispatch:
+  ???
 
 jobs:
   Terraform_destroy :
