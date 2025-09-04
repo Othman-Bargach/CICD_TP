@@ -38,16 +38,15 @@ jobs:
 
       # Enregistre l'adresse IP publique de l'instance EC2 créée par Terraform dans un fichier texte
       - name: Save public IP output
-        run: |
-          terraform output -raw public_ip > public_ip.txt
+        run: ???
         working-directory: ./CD/terraform-aws-instance
 
       # Upload l'adresse IP publique dans les artifacts du workflow pour qu'elle puisse être utilisée par d'autres jobs ou workflows
       - name: Upload public IP artifact
-        uses: actions/upload-artifact@v4
+        uses: ???
         with:
-          name: public-ip
-          path: ./CD/terraform-aws-instance/public_ip.txt
+          name: ???
+          path: ./CD/terraform-aws-instance/???
 
   ansible:
     name : Configuration EC2 avec Ansible
@@ -63,18 +62,14 @@ jobs:
 
       # Télécharge l'adresse IP publique de l'instance EC2 créée par Terraform depuis les artifacts du workflow précédent
       - name: Download public IP artifact
-        uses: actions/download-artifact@v4
+        uses: ???
         with:
           name: public-ip
-
-      # Lit l'adresse IP publique depuis le fichier texte téléchargé
-      - name: Show public IP
-        run: cat public_ip.txt
 
       # Ajoute l'hôte EC2 dans known_hosts pour éviter l'erreur de vérification de clé SSH
       - name: Add EC2 to known_hosts
         run: |
-          ANSIBLE_HOST=$(cat public_ip.txt)
+          ANSIBLE_HOST=$(cat ???.txt)
           mkdir -p ~/.ssh
           ssh-keyscan "$ANSIBLE_HOST" >> ~/.ssh/known_hosts
 
@@ -85,5 +80,5 @@ jobs:
 
       - name: Run Ansible Playbook
         run: |
-          ANSIBLE_HOST=$(cat public_ip.txt)
+          ANSIBLE_HOST=$(cat ???.txt)
           ansible-playbook -i "$ANSIBLE_HOST," CD/ansible/playbook.yml -u ubuntu
